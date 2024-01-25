@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+        "Sid": "CreateInsight",
+        "Effect": "Allow",
+        "Action": "securityhub:GetInsightResults",
+        "Resource": "*"
+      },
+      {
+        "Sid": "GetCreds",
+        "Effect": "Allow",
+        "Action": [
+          "ssm:GetParameter"
+        ],
+        "Resource": [
+          "arn:aws:ssm:us-east-1:<account-id>:parameter/spreadsheetID",
+          "arn:aws:ssm:us-east-1:<account-id>:parameter/google-admin-email-sheets",
+          "arn:aws:ssm:us-east-1:<account-id>:parameter/google-dirAPI-creds-sheets"
+        ]
+      }
+  ]
+}
